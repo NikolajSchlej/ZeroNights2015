@@ -1,5 +1,5 @@
 #include <Uefi.h>
-#include <Liblrary/PeiServicesLib.h>
+#include <Library/PeiServicesLib.h>
 
 EFI_STATUS
 EFIAPI

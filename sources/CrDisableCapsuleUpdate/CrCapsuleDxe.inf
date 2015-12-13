@@ -1,0 +1,27 @@
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = CrDisableCapsuleUpdate
+  FILE_GUID                      = 6abe6774-51f5-4a68-bc7e-2727a28cfab0
+  MODULE_TYPE                    = DXE_RUNTIME_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = CrCapsuleDxeEntry
+
+[Sources]
+  CrCapsuleDxe.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  UefiDriverEntryPoint
+  CapsuleLib
+  DebugLib
+
+[Protocols]
+  gEfiCapsuleArchProtocolGuid   ## PRODUCED
+
+[Depex]
+  TRUE

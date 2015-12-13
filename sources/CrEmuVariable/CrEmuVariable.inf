@@ -1,0 +1,49 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = CrEmuVariable
+  FILE_GUID                      = 726e70de-9e28-44e4-9dc4-da659859cc99
+  MODULE_TYPE                    = DXE_RUNTIME_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = VariableServiceInitialize
+
+[Sources]
+  InitVariable.c
+  EmuVariable.c
+  Variable.h
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  BaseLib
+  UefiLib
+  UefiRuntimeServicesTableLib
+  UefiBootServicesTableLib
+  UefiDriverEntryPoint
+  MemoryAllocationLib
+  BaseMemoryLib
+  HobLib
+  PcdLib
+  IoLib
+  DebugLib
+
+[Protocols]
+
+[Guids]
+  gEfiEventVirtualAddressChangeGuid
+  gEfiEventExitBootServicesGuid
+  gEfiGlobalVariableGuid
+  gEfiVariableGuid
+
+[Pcd]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdEmuVariableNvStoreReserved
+  gEfiMdeModulePkgTokenSpaceGuid.PcdMaxVariableSize
+  gEfiMdeModulePkgTokenSpaceGuid.PcdMaxHardwareErrorVariableSize
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVariableStoreSize
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVariableCollectStatistics
+  gEfiMdeModulePkgTokenSpaceGuid.PcdHwErrStorageSize
+
+[Depex]
+  TRUE
+
